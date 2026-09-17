@@ -7,8 +7,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:ai_filemetadata/Resources/Public/Icons/actions-ai-generate.svg'
     ],
-    'actions-ai-generate-inverse' => [
+    'module-icon' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:ai_filemetadata/Resources/Public/Icons/actions-ai-generate-inverse.svg'
+        'source' => 'EXT:ai_filemetadata/Resources/Public/Icons/module-icon.svg'
     ],
 ];

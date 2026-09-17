@@ -92,13 +92,13 @@
                 <source>No token usage recorded in the last 30 days.</source>
             </trans-unit>
             <trans-unit id="module.title" resname="module.title">
-                <source>AI Alt Texts</source>
+                <source>AI alt text</source>
             </trans-unit>
             <trans-unit id="module.description" resname="module.description">
                 <source>Overview of AI-generated alt texts for files.</source>
             </trans-unit>
             <trans-unit id="module.heading" resname="module.heading">
-                <source>AI Alt Texts</source>
+                <source>AI alt text</source>
             </trans-unit>
             <trans-unit id="module.introduction" resname="module.introduction">
                 <source>Select an accessible file storage or folder in the file storage tree.</source>
