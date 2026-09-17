@@ -19,6 +19,7 @@ final class GeneratedAltTextQuery
     public const STATUS_GENERATED = 'generated';
     public const STATUS_MISSING = 'missing';
     public const STATUS_NEEDS_REVIEW = 'needs_review';
+    public const STATUS_REVIEWED = 'reviewed';
 
     public function __construct(
         private readonly ConnectionPool $connectionPool,
@@ -280,6 +281,18 @@ final class GeneratedAltTextQuery
                 $queryBuilder->expr()->eq(
                     'metadata.alttext_reviewed',
                     $queryBuilder->createNamedParameter(0, Connection::PARAM_INT),
+                ),
+            );
+        }
+        if ($status === self::STATUS_REVIEWED) {
+            return (string)$queryBuilder->expr()->and(
+                $queryBuilder->expr()->gt(
+                    'metadata.alttext_generation_date',
+                    $queryBuilder->createNamedParameter(0, Connection::PARAM_INT),
+                ),
+                $queryBuilder->expr()->eq(
+                    'metadata.alttext_reviewed',
+                    $queryBuilder->createNamedParameter(1, Connection::PARAM_INT),
                 ),
             );
         }

@@ -92,13 +92,13 @@
                 <source>No token usage recorded in the last 30 days.</source>
             </trans-unit>
             <trans-unit id="module.title" resname="module.title">
-                <source>AI Alternative Texts</source>
+                <source>AI Alt Texts</source>
             </trans-unit>
             <trans-unit id="module.description" resname="module.description">
-                <source>Overview of AI-generated alternative texts for files.</source>
+                <source>Overview of AI-generated alt texts for files.</source>
             </trans-unit>
             <trans-unit id="module.heading" resname="module.heading">
-                <source>AI Alternative Texts</source>
+                <source>AI Alt Texts</source>
             </trans-unit>
             <trans-unit id="module.introduction" resname="module.introduction">
                 <source>Select an accessible file storage or folder in the file storage tree.</source>
@@ -110,16 +110,19 @@
                 <source>No matching image metadata records were found in this scope.</source>
             </trans-unit>
             <trans-unit id="module.error" resname="module.error">
-                <source>The alternative text work queue could not be loaded.</source>
+                <source>The alt text work queue could not be loaded.</source>
             </trans-unit>
             <trans-unit id="module.filter.label" resname="module.filter.label">
-                <source>Alternative text status</source>
+                <source>Alt text status</source>
             </trans-unit>
             <trans-unit id="module.filter.generated" resname="module.filter.generated">
-                <source>Generated</source>
+                <source>All AI-generated</source>
             </trans-unit>
             <trans-unit id="module.filter.needsReview" resname="module.filter.needsReview">
                 <source>Needs review</source>
+            </trans-unit>
+            <trans-unit id="module.filter.reviewed" resname="module.filter.reviewed">
+                <source>Reviewed</source>
             </trans-unit>
             <trans-unit id="module.filter.missing" resname="module.filter.missing">
                 <source>Missing</source>
@@ -137,7 +140,7 @@
                 <source>The selected folder is unavailable or excluded from AI processing.</source>
             </trans-unit>
             <trans-unit id="module.generate.heading" resname="module.generate.heading">
-                <source>Generate alternative texts</source>
+                <source>Generate alt texts</source>
             </trans-unit>
             <trans-unit id="module.generate.scope" resname="module.generate.scope">
                 <source>Selected scope</source>
@@ -146,16 +149,19 @@
                 <source>Missing alt texts</source>
             </trans-unit>
             <trans-unit id="module.generate.noneMissing" resname="module.generate.noneMissing">
-                <source>No images in the selected folder require an alternative text.</source>
+                <source>No images in the selected folder require an alt text.</source>
             </trans-unit>
             <trans-unit id="module.generate.selectFolder" resname="module.generate.selectFolder">
-                <source>Select a folder to generate alternative texts.</source>
+                <source>Select a folder to generate alt texts.</source>
             </trans-unit>
             <trans-unit id="module.generate.overwrite" resname="module.generate.overwrite">
-                <source>Overwrite existing alternative texts, including manually written texts</source>
+                <source>Overwrite existing alt texts, including manually written texts</source>
             </trans-unit>
             <trans-unit id="module.generate.submit" resname="module.generate.submit">
-                <source>Generate missing alternative texts</source>
+                <source>Generate missing alt texts</source>
+            </trans-unit>
+            <trans-unit id="module.generate.liveHint" resname="module.generate.liveHint">
+                <source>Generated alt texts are saved directly to the image metadata and are available immediately.</source>
             </trans-unit>
             <trans-unit id="module.generate.loading" resname="module.generate.loading">
                 <source>Generating…</source>
@@ -164,13 +170,13 @@
                 <source>Generation is running. This may take several minutes. Please keep this page open.</source>
             </trans-unit>
             <trans-unit id="module.generate.success" resname="module.generate.success">
-                <source>Generation completed. %d alternative text(s) generated.</source>
+                <source>Generation completed. %d alt text(s) generated.</source>
             </trans-unit>
             <trans-unit id="module.generate.unavailable" resname="module.generate.unavailable">
                 <source>The selected folder is unavailable, excluded from AI processing, or cannot be edited.</source>
             </trans-unit>
             <trans-unit id="module.generate.error" resname="module.generate.error">
-                <source>Alternative text generation failed. No further files were processed.</source>
+                <source>Alt text generation failed. No further files were processed.</source>
             </trans-unit>
             <trans-unit id="module.column.thumbnail" resname="module.column.thumbnail">
                 <source>Thumbnail</source>
@@ -182,7 +188,7 @@
                 <source>Filename</source>
             </trans-unit>
             <trans-unit id="module.column.alternative" resname="module.column.alternative">
-                <source>Alternative text</source>
+                <source>Alt text</source>
             </trans-unit>
             <trans-unit id="module.column.language" resname="module.column.language">
                 <source>Language</source>
@@ -212,10 +218,10 @@
                 <source>Not applicable</source>
             </trans-unit>
             <trans-unit id="module.review.success" resname="module.review.success">
-                <source>The alternative text was marked as reviewed.</source>
+                <source>The alt text was marked as reviewed.</source>
             </trans-unit>
             <trans-unit id="module.review.error" resname="module.review.error">
-                <source>The alternative text could not be marked as reviewed.</source>
+                <source>The alt text could not be marked as reviewed.</source>
             </trans-unit>
             <trans-unit id="module.edit.save" resname="module.edit.save">
                 <source>Save</source>
@@ -224,10 +230,10 @@
                 <source>Edit metadata</source>
             </trans-unit>
             <trans-unit id="module.edit.success" resname="module.edit.success">
-                <source>The alternative text was saved.</source>
+                <source>The alt text was saved.</source>
             </trans-unit>
             <trans-unit id="module.edit.error" resname="module.edit.error">
-                <source>The alternative text could not be saved.</source>
+                <source>The alt text could not be saved.</source>
             </trans-unit>
             <trans-unit id="module.language.all" resname="module.language.all">
                 <source>All languages</source>
@@ -239,7 +245,7 @@
                 <source>Language %d</source>
             </trans-unit>
             <trans-unit id="module.pagination.label" resname="module.pagination.label">
-                <source>Alternative text overview pages</source>
+                <source>Alt text overview pages</source>
             </trans-unit>
             <trans-unit id="module.pagination.previous" resname="module.pagination.previous">
                 <source>Previous</source>

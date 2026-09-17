@@ -90,6 +90,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
             'isGeneratedStatus' => $status === GeneratedAltTextQuery::STATUS_GENERATED,
             'isMissingStatus' => $status === GeneratedAltTextQuery::STATUS_MISSING,
             'isNeedsReviewStatus' => $status === GeneratedAltTextQuery::STATUS_NEEDS_REVIEW,
+            'isReviewedStatus' => $status === GeneratedAltTextQuery::STATUS_REVIEWED,
             'requestedPage' => $requestedPage,
             'missingAltTextCount' => 0,
             'records' => [],
@@ -414,7 +415,8 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
             GeneratedAltTextQuery::STATUS_GENERATED,
             GeneratedAltTextQuery::STATUS_MISSING,
             GeneratedAltTextQuery::STATUS_NEEDS_REVIEW,
-        ], true) ? (string)$status : GeneratedAltTextQuery::STATUS_GENERATED;
+            GeneratedAltTextQuery::STATUS_REVIEWED,
+        ], true) ? (string)$status : GeneratedAltTextQuery::STATUS_NEEDS_REVIEW;
     }
 
     /**

@@ -10,7 +10,7 @@ return [
         'position' => ['after' => 'media_management'],
         'access' => 'user',
         'path' => '/module/file/ai-alternative-texts',
-        'iconIdentifier' => 'actions-ai-generate',
+        'iconIdentifier' => 'actions-ai-generate-inverse',
         'labels' => [
             'title' => 'LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.title',
             'description' => 'LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.description',
