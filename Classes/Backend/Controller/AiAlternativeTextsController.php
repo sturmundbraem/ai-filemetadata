@@ -416,7 +416,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
             GeneratedAltTextQuery::STATUS_MISSING,
             GeneratedAltTextQuery::STATUS_NEEDS_REVIEW,
             GeneratedAltTextQuery::STATUS_REVIEWED,
-        ], true) ? (string)$status : GeneratedAltTextQuery::STATUS_NEEDS_REVIEW;
+        ], true) ? (string)$status : GeneratedAltTextQuery::STATUS_MISSING;
     }
 
     /**
