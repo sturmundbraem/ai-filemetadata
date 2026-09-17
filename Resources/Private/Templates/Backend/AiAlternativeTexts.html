@@ -107,12 +107,26 @@
                                             data-ai-filemetadata-generation-submit
                                             data-loading-label="{f:translate(key: 'LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.loading')}"
                                         >
-                                            <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submit" />
+                                            <f:if condition="{generationBatchLimit}">
+                                                <f:then>
+                                                    <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submit" arguments="{0: generationBatchLimit}" />
+                                                </f:then>
+                                                <f:else>
+                                                    <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submitUnlimited" />
+                                                </f:else>
+                                            </f:if>
                                         </button>
                                     </f:then>
                                     <f:else>
                                         <button type="submit" class="btn btn-primary" disabled>
-                                            <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submit" />
+                                            <f:if condition="{generationBatchLimit}">
+                                                <f:then>
+                                                    <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submit" arguments="{0: generationBatchLimit}" />
+                                                </f:then>
+                                                <f:else>
+                                                    <f:translate key="LLL:EXT:ai_filemetadata/Resources/Private/Language/locallang_be.xlf:module.generate.submitUnlimited" />
+                                                </f:else>
+                                            </f:if>
                                         </button>
                                     </f:else>
                                 </f:if>

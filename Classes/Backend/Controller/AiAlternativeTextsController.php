@@ -6,6 +6,7 @@ namespace Mfd\Ai\FileMetadata\Backend\Controller;
 
 use Doctrine\DBAL\Exception as DatabaseException;
 use Mfd\Ai\FileMetadata\Backend\GeneratedAltTextQuery;
+use Mfd\Ai\FileMetadata\Services\ConfigurationService;
 use Mfd\Ai\FileMetadata\Services\FalAdapter;
 use Mfd\Ai\FileMetadata\Services\FalFileEligibility;
 use Psr\Http\Message\ResponseInterface;
@@ -47,6 +48,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
         private readonly SiteFinder $siteFinder,
         private readonly FalFileEligibility $falFileEligibility,
         private readonly FalAdapter $falAdapter,
+        private readonly ConfigurationService $configurationService,
         private readonly UriBuilder $uriBuilder,
         private readonly FormProtectionFactory $formProtectionFactory,
         private readonly FlashMessageService $flashMessageService,
@@ -73,6 +75,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
             && $scopeIsEligible
             && $this->getBackendUser()->check('tables_modify', 'sys_file_metadata');
         $formProtection = $this->formProtectionFactory->createFromRequest($request);
+        $generationBatchLimit = $this->configurationService->getGenerationBatchLimit();
         $moduleTemplate->assignMultiple([
             'dateFormat' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] ?? 'Y-m-d',
             'timeFormat' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm'] ?? 'H:i',
@@ -86,6 +89,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
                 self::GENERATE_FORM_ACTION,
                 $selectedFolderIdentifier,
             ) : '',
+            'generationBatchLimit' => $generationBatchLimit,
             'status' => $status,
             'isGeneratedStatus' => $status === GeneratedAltTextQuery::STATUS_GENERATED,
             'isMissingStatus' => $status === GeneratedAltTextQuery::STATUS_MISSING,
@@ -233,7 +237,7 @@ final class AiAlternativeTextsController implements LoggerAwareInterface
             $generatedCount = $this->falAdapter->generate(
                 $selectedFolder,
                 $overwriteMetadata,
-                null,
+                $this->configurationService->getGenerationBatchLimit(),
                 'backend',
                 static fn(File $file): bool => $file->getStorage()->getUid() === $storage->getUid()
                     && $storage->isWithinFolder($selectedFolder, $file)

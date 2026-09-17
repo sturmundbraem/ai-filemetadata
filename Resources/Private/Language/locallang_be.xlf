@@ -31,6 +31,9 @@
             <trans-unit id="extconf.connect_timeout" resname="extconf.connect_timeout">
                 <source>Connection timeout in seconds for OpenAI API calls. Empty or 0 falls back to the default of 10 seconds.</source>
             </trans-unit>
+            <trans-unit id="extconf.generation_batch_limit" resname="extconf.generation_batch_limit">
+                <source>Maximum number of alt texts generated per backend module request. Leave empty for no limit. Invalid values fall back to 50.</source>
+            </trans-unit>
             <trans-unit id="extconf.model" resname="extconf.project_id">
                 <source>Selected model, default gpt-4o-mini</source>
             </trans-unit>
@@ -158,6 +161,9 @@
                 <source>Overwrite existing alt texts, including manually written texts</source>
             </trans-unit>
             <trans-unit id="module.generate.submit" resname="module.generate.submit">
+                <source>Generate up to %d alt texts</source>
+            </trans-unit>
+            <trans-unit id="module.generate.submitUnlimited" resname="module.generate.submitUnlimited">
                 <source>Generate missing alt texts</source>
             </trans-unit>
             <trans-unit id="module.generate.liveHint" resname="module.generate.liveHint">
